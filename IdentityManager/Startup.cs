@@ -46,6 +46,11 @@ namespace IdentityManager
         options.AppSecret = "abe6f05cc42cb58fef1e689b54a04011";
       });
 
+      services.ConfigureApplicationCookie(opt =>
+      {
+        opt.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Home/Accessdenied");
+      });
+
       services.AddControllersWithViews();
     }
 
